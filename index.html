@@ -2,13 +2,13 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>T&J Кафе</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fff;
+      background-color: #ffffff;
       color: #333;
       line-height: 1.6;
     }
@@ -25,13 +25,15 @@
     .hero {
       background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
       background-size: cover;
-      height: 50vh;
+      background-repeat: no-repeat;
+      background-color: #000;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-      padding: 0 1rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     .hero h2 {
@@ -77,7 +79,7 @@
       font-size: 1rem;
     }
     .call-button {
-      /* премахнат display:none, за да е винаги видим */
+      display: none;
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -89,6 +91,20 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       z-index: 1000;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+      .product, .contact-form {
+        padding: 1.5rem;
+      }
+      .call-button {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -105,7 +121,7 @@
   <section class="content">
     <div class="product">
       <h3>За продукта</h3>
-      <p>Сместа T&J комбинира най-доброто от арабиката и робустата – с балансиран вкус, средно изпечени зърна и уникален аромат с шоколадови и плодови нотки. Идеално за всяка част от деня.</p>
+      <p>T&J е изискана селекция от 60% арабика и 40% робуста – перфектно балансиран вкус със средно изпечени зърна и ароматни нотки на шоколад, череша и печени бадеми. Идеално за всяка част от деня.</p>
     </div>
 
     <div class="contact-form">
@@ -119,10 +135,8 @@
     </div>
   </section>
 
-  <a href="tel:+359999999393" class="call-button" aria-label="Обади се">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.88 19.88 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 9.2a19.88 19.88 0 0 1-3.07-8.63A2 2 0 0 1 3.1 0h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 8 8l2.27-1.16a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
+  <a href="tel:+359999999393" class="call-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.88 19.88 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 9.2a19.88 19.88 0 0 1-3.07-8.63A2 2 0 0 1 3.1 0h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 8 8l2.27-1.16a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Обади се
   </a>
 
