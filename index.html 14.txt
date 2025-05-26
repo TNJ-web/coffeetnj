@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T&J Кафе</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, #004080, #ffcc00);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+      background-size: cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .content {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .product, .shop, .contact-form, .shipping, .order-form {
+      background: #f9f9f9;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    .product h3, .shop h3, .shipping h3, .order-form h3 {
+      color: #004080;
+    }
+    .shop-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+    .shop-item img {
+      max-width: 100px;
+      border-radius: 0.5rem;
+    }
+    .shop-item button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .contact-form button, .shipping button, .order-form button {
+      background: #ffcc00;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .contact-form {
+      background: #004080;
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    .call-button {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffcc00;
+      color: #004080;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    @media (max-width: 600px) {
+      .shop-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .shop-item img {
+        margin-bottom: 1rem;
+      }
+      .call-button {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>T&J Кафе</h1>
+    <p>60% арабика, 40% робуста – нотки на шоколад, череша и печени бадеми</p>
+  </header>
+
+  <section class="hero">
+    <h2>Наслади се на изискано кафе с характер</h2>
+  </section>
+
+  <section class="content">
+    <div class="product">
+      <h3>За продукта</h3>
+      <p>T&J е изискана селекция от 60% арабика и 40% робуста – перфектно балансиран вкус със средно изпечени зърна и ароматни нотки на шоколад, череша и печени бадеми. Идеално за всяка част от деня.</p>
+    </div>
+
+    <div class="shop">
+      <h3>Магазин</h3>
+      <div class="shop-item">
+        <img src="tj-coffee.png" alt="T&J Coffee 1kg">
+        <div>
+          <p><strong>T&J Кафе 1 кг</strong><br>60% арабика / 40% робуста<br>Medium roast - Chocolate, Cherry & Roasted Almond</p>
+          <p><strong>Цена: 28 лв</strong></p>
+        </div>
+        <a href="#order" class="shop-item-button"><button>Купи</button></a>
+      </div>
+    </div>
+
+    <div class="shipping">
+      <h3>Избор на офис за доставка</h3>
+      <p><strong>Избери офис на Спиди:</strong></p>
+      <iframe src="https://services.speedy.bg/office_locator_widget_v3/office_locator.php?lang=bg&showOfficesList=0&dropOff=1&pickUp=1&officeType=ALL&selectOfficeButtonCaption=Избери този офис" height="500"></iframe>
+
+      <p><strong>Избери офис на Еконт:</strong></p>
+      <iframe src="https://www.econt.com/e-office-widget-2/" height="500"></iframe>
+    </div>
+
+    <div class="order-form" id="order">
+      <h3>Поръчай сега</h3>
+      <form>
+        <label for="name">Име:</label>
+        <input type="text" id="name" name="name" placeholder="Вашето име" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Вашият телефон" required>
+
+        <label for="address">Адрес за доставка:</label>
+        <textarea id="address" name="address" placeholder="Въведете адрес или офис на Спиди/Еконт" required></textarea>
+
+        <label for="quantity">Количество (брой пакети):</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <button type="submit">Изпрати поръчка</button>
+      </form>
+    </div>
+
+    <div class="contact-form">
+      <h3>Свържи се с нас</h3>
+      <form action="https://formspree.io/f/mrbqvzzg" method="POST">
+        <input type="text" name="name" placeholder="Име" required>
+        <input type="email" name="email" placeholder="Имейл" required>
+        <textarea name="message" rows="4" placeholder="Съобщение"></textarea>
+        <button type="submit">Изпрати</button>
+      </form>
+    </div>
+  </section>
+
+  <a href="tel:+359999999393" class="call-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.88 19.88 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 9.2a19.88 19.88 0 0 1-3.07-8.63A2 2 0 0 1 3.1 0h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 8 8l2.27-1.16a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    Обади се
+  </a>
+
+  <footer>
+    <p>© 2025 T&J Coffee. Всички права запазени.</p>
+  </footer>
+</body>
+</html>
