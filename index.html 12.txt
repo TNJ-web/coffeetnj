@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T&J Кафе</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, #004080, #ffcc00);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+      background-size: cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .content {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .product, .shop, .contact-form, .shipping, .order-form {
+      background: #f9f9f9;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    .product h3, .shop h3, .shipping h3, .order-form h3 {
+      color: #004080;
+    }
+    .shop-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+    .shop-item img {
+      max-width: 100px;
+      border-radius: 0.5rem;
+    }
+    .shop-item button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .contact-form button, .shipping button, .order-form button {
+      background: #ffcc00;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    @media (max-width: 600px) {
+      .shop-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .shop-item img {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>T&J Кафе</h1>
+    <p>60% арабика, 40% робуста – нотки на шоколад, череша и печени бадеми</p>
+  </header>
+
+  <section class="hero">
+    <h2>Наслади се на изискано кафе с характер</h2>
+  </section>
+
+  <section class="content">
+    <div class="product">
+      <h3>За продукта</h3>
+      <p>T&J е изискана селекция от 60% арабика и 40% робуста – перфектно балансиран вкус със средно изпечени зърна и ароматни нотки на шоколад, череша и печени бадеми. Идеално за всяка част от деня.</p>
+    </div>
+
+    <div class="shop">
+      <h3>Магазин</h3>
+      <div class="shop-item">
+        <img src="tj-coffee.png" alt="T&J Coffee 1kg">
+        <div>
+          <p><strong>T&J Кафе 1 кг</strong><br>60% арабика / 40% робуста<br>Medium roast - Chocolate, Cherry & Roasted Almond</p>
+          <p><strong>Цена: 28 лв</strong></p>
+        </div>
+        <a href="#order" class="shop-item-button"><button>Купи</button></a>
+      </div>
+    </div>
+
+    <div class="shipping">
+      <h3>Доставка чрез Спиди</h3>
+      <form id="shippingForm">
+        <label for="city">Град:</label>
+        <input type="text" id="city" name="city" placeholder="Въведете град" required>
+
+        <label for="office">Офис на Спиди:</label>
+        <select id="office" name="office" required>
+          <option value="">Изберете офис</option>
+        </select>
+
+        <button type="submit">Избери офис</button>
+      </form>
+    </div>
+
+    <div class="order-form" id="order">
+      <h3>Поръчай сега</h3>
+      <form>
+        <label for="name">Име:</label>
+        <input type="text" id="name" name="name" placeholder="Вашето име" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Вашият телефон" required>
+
+        <label for="address">Адрес за доставка:</label>
+        <textarea id="address" name="address" placeholder="Въведете адрес или офис на Спиди" required></textarea>
+
+        <label for="quantity">Количество (брой пакети):</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <button type="submit">Изпрати поръчка</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const offices = {
+      'София': ['София - Център', 'София - Люлин', 'София - Младост'],
+      'Пловдив': ['Пловдив - Център', 'Пловдив - Тракия'],
+      'Варна': ['Варна - Център', 'Варна - Владиславово']
+    };
+
+    document.getElementById('city').addEventListener('input', function () {
+      const city = this.value.trim();
+      const normalizedCity = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+      const officeSelect = document.getElementById('office');
+      officeSelect.innerHTML = '<option value="">Изберете офис</option>';
+      if (offices[normalizedCity]) {
+        offices[normalizedCity].forEach(office => {
+          const option = document.createElement('option');
+          option.value = office;
+          option.textContent = office;
+          officeSelect.appendChild(option);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
